@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Resume Analyzer</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#6a11cb,#2575fc);
+padding:40px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+background:white;
+border-radius:20px;
+padding:40px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+h1{
+text-align:center;
+color:#4f46e5;
+margin-bottom:30px;
+}
+
+.score-container{
+display:flex;
+gap:20px;
+margin-bottom:25px;
+}
+
+.card{
+background:#f8f9ff;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+flex:1;
+}
+
+.card h2{
+color:#4f46e5;
+margin-bottom:15px;
+}
+
+.score{
+font-size:42px;
+font-weight:bold;
+text-align:center;
+color:#16a34a;
+}
+
+.progress{
+width:100%;
+height:18px;
+background:#ddd;
+border-radius:20px;
+margin-top:15px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+background:#4f46e5;
+}
+
+.summary{
+font-size:17px;
+line-height:1.7;
+}
+
+ul{
+list-style:none;
+padding:0;
+}
+
+li{
+background:#e0e7ff;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.rating{
+font-size:30px;
+text-align:center;
+color:#f59e0b;
+margin-top:10px;
+}
+
+.btn{
+display:block;
+width:260px;
+margin:20px auto;
+padding:15px;
+text-align:center;
+background:#4f46e5;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:18px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#4338ca;
+}
+
+@media(max-width:768px){
+
+.score-container{
+flex-direction:column;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🤖 AI Resume Analyzer</h1>
+
+<div class="score-container">
+
+<div class="card">
+
+<h2>📊 ATS Score</h2>
+
+<div class="score">{{ score }}/100</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:{{ score }}%;"></div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>🎯 Job Match</h2>
+
+<div class="score">{{ job_match }}/100</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:{{ job_match }}%;background:#22c55e;"></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⭐ Resume Rating</h2>
+
+<div class="rating">
+
+{% if score >= 90 %}
+⭐⭐⭐⭐⭐ Excellent
+{% elif score >= 80 %}
+⭐⭐⭐⭐ Very Good
+{% elif score >= 70 %}
+⭐⭐⭐ Good
+{% elif score >= 60 %}
+⭐⭐ Average
+{% else %}
+⭐ Needs Improvement
+{% endif %}
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📝 AI Summary</h2>
+
+<p class="summary">{{ summary }}</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>🟢 Technical Skills</h2>
+
+<ul>
+
+{% for skill in technical_skills %}
+<li>✔ {{ skill }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>🤝 Soft Skills</h2>
+
+<ul>
+
+{% for skill in soft_skills %}
+<li>✔ {{ skill }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>✅ Matched Skills</h2>
+
+<ul>
+
+{% for skill in matched_skills %}
+<li>✔ {{ skill }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>❌ Missing Skills</h2>
+
+<ul>
+
+{% for skill in missing_skills %}
+<li>{{ skill }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💡 AI Suggestions</h2>
+
+<ul>
+
+{% for suggestion in suggestions %}
+<li>{{ suggestion }}</li>
+{% endfor %}
+
+</ul>
+
+</div>
+
+<a href="/download" class="btn">📄 Download PDF Report</a>
+
+<a href="/" class="btn">🔄 Analyze Another Resume</a>
+
+</div>
+
+</body>
+</html>
