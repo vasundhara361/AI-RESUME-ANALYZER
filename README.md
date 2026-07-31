@@ -143,13 +143,13 @@ http://127.0.0.1:5000
 
 ### 🏠 Home Page
 
-![Home Page](static/screenshots/home.png)
+![Home Page](./static/screenshots/home.png)
 
 ---
 
 ### 📊 Resume Analysis
 
-![Resume Analysis](static/screenshots/result.png)
+![Resume Analysis](./static/screenshots/result.png)
 
 ## 🎯 Future Improvements
 
