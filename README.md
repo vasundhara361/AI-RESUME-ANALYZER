@@ -141,19 +141,15 @@ http://127.0.0.1:5000
 
 ## 📸 Screenshots
 
-### Home Page
+### 🏠 Home Page
 
-_Add a screenshot here_
-
-### Analysis Result
-
-_Add a screenshot here_
-
-### PDF Report
-
-_Add a screenshot here_
+![Home Page](static/screen%20shots/home.png)
 
 ---
+
+### 📊 Resume Analysis
+
+![Resume Analysis](static/screen%20shots/result.png)
 
 ## 🎯 Future Improvements
 
