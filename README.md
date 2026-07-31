@@ -68,7 +68,15 @@ AI-RESUME-ANALYZER/
 ├── .env
 └── README.md
 ```
+# 🤖 AI Resume Analyzer
 
+An AI-powered Resume Analyzer built with Flask and Google Gemini AI that evaluates resumes, calculates ATS scores, matches resumes against job descriptions, and generates downloadable PDF reports.
+
+## 🌐 Live Demo
+
+👉 https://ai-resume-analyzer-a5k5.onrender.com
+
+---
 ---
 
 ## ⚙️ Installation
