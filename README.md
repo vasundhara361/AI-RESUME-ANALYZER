@@ -170,7 +170,9 @@ http://127.0.0.1:5000
 **Sannamareppa gari Vasundhara**
 
 - GitHub: https://github.com/vasundhara361
-- LinkedIn: *(Add your LinkedIn profile URL here)*
+- LinkedIn: www.linkedin.com/in/
+sannamareppa-gari-vasundhara-a57b75263
+
 
 ---
 
